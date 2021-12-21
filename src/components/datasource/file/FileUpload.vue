@@ -9,15 +9,16 @@
     >
       <n-button>选择文件</n-button>
     </n-upload>
+    <n-button @click="updateURL">更新地址</n-button>
   </div>
 </template>
 
 <script setup lang="ts">
 
-import { log } from 'console'
 import { NUpload, NButton } from 'naive-ui'
 import { FileInfo } from 'naive-ui/lib/upload/src/interface'
 import { onMounted, Ref, ref } from 'vue'
+import { useStore } from '../../../vuex/store'
 
 const fileListLengthRef = ref(0)
 const uploadRef: Ref<typeof NUpload | null> = ref(null)
@@ -28,6 +29,11 @@ const handleChange = ({ fileList }: { fileList: FileInfo[] }) => {
 
 const handleClick = () => {
   uploadRef?.value?.submit()
+}
+const store = useStore()
+const updateURL = () => {
+
+  store.commit('updateURL', 'https://www.mocky.io/v2/test')
 }
 
 onMounted(() => {

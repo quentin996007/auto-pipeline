@@ -10,7 +10,8 @@
         maxRows: 5
       }"
     />
-    <n-button :disabled="url.length == 0" @click="handleClick" class="mb-4">上传文件</n-button>
+    <n-button :disabled="url.length == 0" @click="handleClick" class="mb-4">确定</n-button>
+    <p>{{ urlData }}</p>
   </div>
 </template>
 
@@ -19,6 +20,10 @@
 
 import { NInput, NButton } from 'naive-ui'
 import { onMounted, ref, watch } from 'vue'
+import { useStore } from '../../../vuex/store'
+
+const store = useStore()
+const urlData = store.state.url
 
 const url = ref("")
 
