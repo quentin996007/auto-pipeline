@@ -1,7 +1,8 @@
 <template>
   <div class="p-4">
-    <n-button :disabled="!fileListLengthRef" @click="handleClick" class="mb-4">上传文件</n-button>
+    <n-button :disabled="fileArray.length == 0" @click="handleClick" class="mb-4">上传文件</n-button>
     <n-upload
+      @finish="handleFinish"
       @change="handleChange"
       action="https://www.mocky.io/v2/5e4bafc63100007100d8b70f"
       :default-upload="false"
@@ -9,31 +10,44 @@
     >
       <n-button>选择文件</n-button>
     </n-upload>
-    <n-button @click="updateURL">更新地址</n-button>
   </div>
 </template>
 
 <script setup lang="ts">
 
 import { NUpload, NButton } from 'naive-ui'
-import { FileInfo } from 'naive-ui/lib/upload/src/interface'
-import { onMounted, Ref, ref } from 'vue'
+import { FileInfo, OnChange, OnFinish } from 'naive-ui/lib/upload/src/interface'
+import { computed, onMounted, Ref, ref } from 'vue'
 import { useStore } from '../../../vuex/store'
+import { DataSourceType } from '../model/DataSource'
 
-const fileListLengthRef = ref(0)
 const uploadRef: Ref<typeof NUpload | null> = ref(null)
+const fileArray = ref<FileInfo[]>([])
 
-const handleChange = ({ fileList }: { fileList: FileInfo[] }) => {
-  fileListLengthRef.value = fileList.length
+const handleChange: OnChange = ({ fileList }) => {
+  fileArray.value = fileList
 }
+
+const store = useStore()
+
+const fileName = computed(() => {
+  return fileArray.value.map(file => file.name).join(",")
+})
 
 const handleClick = () => {
-  uploadRef?.value?.submit()
+  // 暂不执行上传任务
+  // uploadRef?.value?.submit()
+  store.commit("setDataSource", {
+    type: DataSourceType.FILE,
+    url: fileName.value
+  })
 }
-const store = useStore()
-const updateURL = () => {
 
-  store.commit('updateURL', 'https://www.mocky.io/v2/test')
+const handleFinish: OnFinish = ({ file, event }) => {
+  // const ext = file.name.split('.')[1]
+  // file.name = `更名.${ext}`
+  // file.url = 'https://www.mocky.io/v2/5e4bafc63100007100d8b70f'
+  return file
 }
 
 onMounted(() => {

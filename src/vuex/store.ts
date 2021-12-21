@@ -1,24 +1,20 @@
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
+import { DataSource } from '../components/datasource/model/DataSource'
 
 export interface State {
-  count: number,
-  url: string
+  dataSource: DataSource | null
 }
 
 export const key: InjectionKey<Store<State>> = Symbol()
 
 export const store = createStore<State>({
   state: {
-    count: 0,
-    url: ''
+    dataSource: null
   },
   mutations: {
-    increment(state) {
-      state.count++
-    },
-    updateURL(state, url) {
-      state.url = url
+    setDataSource(state, dataSource: DataSource) {
+      state.dataSource = dataSource
     }
   }
 })

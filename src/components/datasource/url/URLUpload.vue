@@ -11,7 +11,6 @@
       }"
     />
     <n-button :disabled="url.length == 0" @click="handleClick" class="mb-4">确定</n-button>
-    <p>{{ urlData }}</p>
   </div>
 </template>
 
@@ -19,17 +18,19 @@
 
 
 import { NInput, NButton } from 'naive-ui'
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useStore } from '../../../vuex/store'
+import { DataSourceType } from '../model/DataSource'
 
 const store = useStore()
-const urlData = store.state.url
 
 const url = ref("")
 
 const handleClick = () => {
-  console.log("文件地址:", url.value);
-
+  store.commit("setDataSource", {
+    type: DataSourceType.URL,
+    url: url.value
+  })
 }
 </script>
 
