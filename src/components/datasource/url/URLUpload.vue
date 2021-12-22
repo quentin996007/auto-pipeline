@@ -20,7 +20,7 @@
 import { NInput, NButton } from 'naive-ui'
 import { onMounted, ref } from 'vue'
 import { useStore } from '../../../vuex/store'
-import { DataSourceType } from '../model/DataSource'
+import { DataSourceType } from '../model/DataSourceType'
 
 const store = useStore()
 

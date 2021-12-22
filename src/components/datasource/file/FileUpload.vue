@@ -19,7 +19,7 @@ import { NUpload, NButton } from 'naive-ui'
 import { FileInfo, OnChange, OnFinish } from 'naive-ui/lib/upload/src/interface'
 import { computed, onMounted, Ref, ref } from 'vue'
 import { useStore } from '../../../vuex/store'
-import { DataSourceType } from '../model/DataSource'
+import { DataSourceType } from '../model/DataSourceType'
 
 const uploadRef: Ref<typeof NUpload | null> = ref(null)
 const fileArray = ref<FileInfo[]>([])
