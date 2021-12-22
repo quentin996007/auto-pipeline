@@ -7,7 +7,7 @@
       placeholder="请输入文件的完整 URL 地址"
       :autosize="{
         minRows: 3,
-        maxRows: 5
+        maxRows: 3
       }"
     />
     <n-button :disabled="url.length == 0" @click="handleClick" class="mb-4">确定</n-button>

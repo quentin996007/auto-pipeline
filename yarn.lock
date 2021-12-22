@@ -270,6 +270,62 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vicons/antd@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "@vicons/antd@npm:0.11.0"
+  checksum: af1dd55c9feed1e2e5257126c97a1d49b6191544d62fa16a4592d3c800734b63a982a23403c45ad8c105403dffd21d83a99248d54349cb78923315b050e54288
+  languageName: node
+  linkType: hard
+
+"@vicons/carbon@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "@vicons/carbon@npm:0.11.0"
+  checksum: 90229ff464196678567fcde1a5e89759a1fb12d1902fafd4d5113e509c8213650db6bfa3fac994e3f5526e87cfe863e449dd7a94a3b19589b559f3025fad66ac
+  languageName: node
+  linkType: hard
+
+"@vicons/fa@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "@vicons/fa@npm:0.11.0"
+  checksum: c3cdacca86d9b4f1423c47c14b3921b73c501e9444a90649e95b8a6af534ea537cce86a76ae365ee36dcd040db9ef9f0da97b03ae41130e6392d6b6fa33dcb22
+  languageName: node
+  linkType: hard
+
+"@vicons/fluent@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "@vicons/fluent@npm:0.11.0"
+  checksum: 4a7f45f7ec55c1d82b1d02c6c4d50492626f2c0c63b518cc0000cc530d9e772945a588d9a4e7258b01cde6d8376d232f1a4adf3b13db873d5e9b818da4d70957
+  languageName: node
+  linkType: hard
+
+"@vicons/ionicons4@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "@vicons/ionicons4@npm:0.11.0"
+  checksum: b89f37b1e0526c5ef7e0f5c009d325c501fda0783f08e8d8c87a0aea91b0d61b6012d8c2badd2be27b35b1d618cbdbe65604957881c65cefd8a67661997965d9
+  languageName: node
+  linkType: hard
+
+"@vicons/ionicons5@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "@vicons/ionicons5@npm:0.11.0"
+  checksum: c311b4b7d9fbf936862ce09118a43addb104dd01263454d7e6572d50ef6ea0f7791da3cb111bc619fef2f15d7eaefe46b7e28b376a1fe5bb663e3c1f8ffe89b6
+  languageName: node
+  linkType: hard
+
+"@vicons/material@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "@vicons/material@npm:0.11.0"
+  checksum: b23c3a4f50f5041cbea60fa813ada827c3f2cb9eae910879563c1355efe038ea38d46f21ec16d35ab7983dbe61189c84873d7d29c018ba3ea6f73c9d2e933ffb
+  languageName: node
+  linkType: hard
+
+"@vicons/tabler@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "@vicons/tabler@npm:0.11.0"
+  checksum: 51d0afa27cfc16afcfca131c3c4d06c968da559b4120d1eac3d96762d78c181313b8b3fbf7bca26fb613bd222e5177ff6721d1f2f59aed951ab6d3a8fcf50491
+  languageName: node
+  linkType: hard
+
 "@vitejs/plugin-vue@npm:^2.0.0":
   version: 2.0.1
   resolution: "@vitejs/plugin-vue@npm:2.0.1"
@@ -636,6 +692,14 @@ __metadata:
   resolution: "auto-pipeline@workspace:."
   dependencies:
     "@types/node": ^17.0.0
+    "@vicons/antd": ^0.11.0
+    "@vicons/carbon": ^0.11.0
+    "@vicons/fa": ^0.11.0
+    "@vicons/fluent": ^0.11.0
+    "@vicons/ionicons4": ^0.11.0
+    "@vicons/ionicons5": ^0.11.0
+    "@vicons/material": ^0.11.0
+    "@vicons/tabler": ^0.11.0
     "@vitejs/plugin-vue": ^2.0.0
     autoprefixer: ^10.4.0
     naive-ui: ^2.23.0

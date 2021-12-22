@@ -1,6 +1,7 @@
 <template>
   <div class="q-container">
     <div class="w-96 h-72 border-gray-50 border-2 bg-white rounded-xl shadow-xl">
+      <p class="text-base font-bold text-gray-700 text-center p-4">设置数据源</p>
       <n-tabs default-value="file" size="large" justify-content="space-evenly">
         >
         <n-tab-pane name="file" tab="文件">
