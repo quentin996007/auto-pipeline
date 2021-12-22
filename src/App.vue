@@ -1,8 +1,11 @@
 <template>
-  <div class="w-full h-14 bg-white flex flex-col justify-center border-b border-gray-200">
-    <n-icon size="40" color="#0e7a0d" class="pl-4">
+  <div
+    class="w-full bg-white flex flex-row justify-start items-center border-b border-gray-200 space-x-2 p-4"
+  >
+    <n-icon size="40" color="#4C1D95">
       <PiedPiperSquare />
     </n-icon>
+    <p class="text-2xl font-bold font-mono text-violet-900">AutoPipe</p>
   </div>
   <DataSource v-if="!dataSource"></DataSource>
   <Editor v-if="dataSource"></Editor>
