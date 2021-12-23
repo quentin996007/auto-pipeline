@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import naive from 'naive-ui'
 import './index.css'
-import { store, key } from '@/vuex/store'
+import { store, key } from './vuex/store'
 
 // 通用字体
 // import 'vfonts/Lato.css'

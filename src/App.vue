@@ -1,17 +1,20 @@
 <template>
-  <div class="q-container">
-    <Title />
-    <div style="flex:1">
-      <DataSource v-if="!dataSource"></DataSource>
-      <Editor v-if="dataSource"></Editor>
+  <n-config-provider :locale="zhCN" :date-locale="dateZhCN">
+    <div class="q-container">
+      <Title />
+      <div style="flex:1">
+        <DataSource v-if="!dataSource"></DataSource>
+        <Editor v-if="dataSource"></Editor>
+      </div>
     </div>
-  </div>
+  </n-config-provider>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useStore } from './vuex/store';
-import { PiedPiperSquare } from '@vicons/fa'
+import { NConfigProvider, NButton } from 'naive-ui'
+import { zhCN, dateZhCN } from 'naive-ui'
 
 import DataSource from '@/components/datasource/DataSource.vue'
 import Editor from './components/editor/Editor.vue';

@@ -24,7 +24,7 @@ import { DataSourceType } from '../model/DataSourceType'
 
 const store = useStore()
 
-const url = ref("")
+const url = ref("http://www.baidu.com/test/file.csv")
 
 const handleClick = () => {
   store.commit("setDataSource", {

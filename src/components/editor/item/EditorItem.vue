@@ -1,6 +1,6 @@
 <template>
   <div class="item p-2">
-    <div class="flex flex-row justify-between">
+    <div class="flex flex-row justify-between items-center">
       <p class="text-gray-900 text-xl">{{ props.sort }}</p>
       <p class="text-gray-900">{{ EditorItemType.description(props.type) }}</p>
     </div>
@@ -28,7 +28,7 @@ const props = defineProps<{
 
 <style>
 .item {
-  height: 108px;
+  height: 208px;
   @apply bg-white shadow-md rounded-lg border border-gray-200;
 }
 </style>

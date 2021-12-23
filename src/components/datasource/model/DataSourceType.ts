@@ -4,7 +4,7 @@ export enum DataSourceType {
 }
 
 export namespace DataSourceType {
-  export function description(type: DataSourceType) {
+  export function description(type?: DataSourceType) {
     switch (type) {
       case DataSourceType.FILE:
         return '文件'
