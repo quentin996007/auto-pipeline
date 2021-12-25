@@ -10,20 +10,24 @@
       </n-grid-item>
     </n-grid>
   </div>
+  <EditorDrawer ref="drawerRef" />
 </template>
 
 <script setup lang="ts">
 
 import { NGrid, NGridItem } from 'naive-ui';
-import { computed, onMounted, Ref } from 'vue'
+import { computed, onMounted, ref, Ref } from 'vue'
 
 import { useStore } from '../../vuex/store';
 import { DataSourceType } from '../datasource/model/DataSourceType';
 import EditorItem from './item/EditorItem.vue';
 import DataSourceItem from './item/DataSourceItem.vue';
 import AddNewEditorItem from './item/AddNewEditorItem.vue';
+import EditorDrawer from './drawer/EditorDrawer.vue';
 
 const store = useStore()
+
+const drawerRef = ref<typeof EditorDrawer | null>(null)
 
 const dataSource = computed(() => {
   const { state } = store;
@@ -32,6 +36,7 @@ const dataSource = computed(() => {
 
 const clickNewItem = () => {
   console.log('click new item');
+  drawerRef?.value?.openDrawer()
 }
 
 </script>
