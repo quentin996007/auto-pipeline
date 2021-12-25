@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { NConfigProvider, NButton } from 'naive-ui'
 import { zhCN, dateZhCN } from 'naive-ui'
 
@@ -19,12 +19,14 @@ import DataSource from '@/components/datasource/DataSource.vue'
 import Editor from './components/editor/Editor.vue';
 import Title from './components/title/Title.vue';
 import { useDataSourceStore } from './store/store';
+import CodeTypeList from './components/editor/drawer/item/CodeEditorConfig/CodeTypeList';
 
 const store = useDataSourceStore()
 
 const dataSource = computed(() => {
   return store.dataSource;
 })
+
 </script>
 
 <style>

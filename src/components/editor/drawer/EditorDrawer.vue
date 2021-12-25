@@ -1,6 +1,8 @@
 <template>
-  <n-drawer v-model:show="active" :placement="'top'">
-    <n-drawer-content title="处理单元列表">《斯通纳》是美国作家约翰·威廉姆斯在 1965 年出版的小说。</n-drawer-content>
+  <n-drawer v-model:show="active" :placement="'top'" height="51 + 200">
+    <n-drawer-content title="处理单元列表">
+      <CodeEditorConfig />
+    </n-drawer-content>
   </n-drawer>
 </template>
 
@@ -8,6 +10,7 @@
 
 import { NDrawer, NDrawerContent } from 'naive-ui'
 import { onMounted, Ref, ref } from 'vue'
+import CodeEditorConfig from './item/CodeEditorConfig/CodeEditorConfig.vue'
 
 const active = ref(false)
 
