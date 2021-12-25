@@ -18,20 +18,19 @@
 import { NGrid, NGridItem } from 'naive-ui';
 import { computed, onMounted, ref, Ref } from 'vue'
 
-import { useStore } from '../../vuex/store';
 import { DataSourceType } from '../datasource/model/DataSourceType';
 import EditorItem from './item/EditorItem.vue';
 import DataSourceItem from './item/DataSourceItem.vue';
 import AddNewEditorItem from './item/AddNewEditorItem.vue';
 import EditorDrawer from './drawer/EditorDrawer.vue';
+import { useDataSourceStore } from '../../store/store';
 
-const store = useStore()
+const store = useDataSourceStore()
 
 const drawerRef = ref<typeof EditorDrawer | null>(null)
 
 const dataSource = computed(() => {
-  const { state } = store;
-  return state.dataSource;
+  return store.dataSource;
 })
 
 const clickNewItem = () => {

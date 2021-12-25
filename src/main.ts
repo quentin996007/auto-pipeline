@@ -3,7 +3,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import naive from 'naive-ui'
 import './index.css'
-import { store, key } from './vuex/store'
+import { createPinia } from 'pinia'
+
 
 // 通用字体
 // import 'vfonts/Lato.css'
@@ -15,6 +16,7 @@ import { store, key } from './vuex/store'
 const app = createApp(App)
 
 app.use(naive)
-app.use(store, key)
+app.use(createPinia())
+
 
 app.mount('#app')

@@ -23,9 +23,9 @@
 
 import { NButton, NPopconfirm } from 'naive-ui';
 import { computed, onMounted } from 'vue'
-import { useStore } from '../../../vuex/store';
+import { useDataSourceStore } from '../../../store/store';
 import { DataSourceType } from '../../datasource/model/DataSourceType';
-const store = useStore()
+const store = useDataSourceStore()
 
 onMounted(() => {
   console.log('mounted')
@@ -44,7 +44,7 @@ const dataTypeName = computed(() => {
 
 const changeDataSource = () => {
   console.log('change data source')
-  store.commit("setDataSource", null)
+  store.setDataSource(null)
 };
 
 

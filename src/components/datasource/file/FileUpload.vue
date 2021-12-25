@@ -18,8 +18,10 @@
 import { NUpload, NButton } from 'naive-ui'
 import { FileInfo, OnChange, OnFinish } from 'naive-ui/lib/upload/src/interface'
 import { computed, onMounted, Ref, ref } from 'vue'
-import { useStore } from '../../../vuex/store'
+import { useDataSourceStore } from '../../../store/store'
 import { DataSourceType } from '../model/DataSourceType'
+
+const store = useDataSourceStore()
 
 const uploadRef: Ref<typeof NUpload | null> = ref(null)
 const fileArray = ref<FileInfo[]>([])
@@ -28,7 +30,6 @@ const handleChange: OnChange = ({ fileList }) => {
   fileArray.value = fileList
 }
 
-const store = useStore()
 
 const fileName = computed(() => {
   return fileArray.value.map(file => file.name).join(",")
@@ -37,7 +38,7 @@ const fileName = computed(() => {
 const handleClick = () => {
   // 暂不执行上传任务
   // uploadRef?.value?.submit()
-  store.commit("setDataSource", {
+  store.setDataSource({
     type: DataSourceType.FILE,
     url: fileName.value
   })

@@ -19,15 +19,15 @@
 
 import { NInput, NButton } from 'naive-ui'
 import { onMounted, ref } from 'vue'
-import { useStore } from '../../../vuex/store'
+import { useDataSourceStore } from '../../../store/store'
 import { DataSourceType } from '../model/DataSourceType'
 
-const store = useStore()
+const store = useDataSourceStore()
 
 const url = ref("http://www.baidu.com/test/file.csv")
 
 const handleClick = () => {
-  store.commit("setDataSource", {
+  store.setDataSource({
     type: DataSourceType.URL,
     url: url.value
   })

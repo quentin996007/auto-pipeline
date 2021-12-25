@@ -12,16 +12,18 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useStore } from './vuex/store';
 import { NConfigProvider, NButton } from 'naive-ui'
 import { zhCN, dateZhCN } from 'naive-ui'
 
 import DataSource from '@/components/datasource/DataSource.vue'
 import Editor from './components/editor/Editor.vue';
 import Title from './components/title/Title.vue';
+import { useDataSourceStore } from './store/store';
+
+const store = useDataSourceStore()
+
 const dataSource = computed(() => {
-  const { state } = useStore();
-  return state.dataSource;
+  return store.dataSource;
 })
 </script>
 
