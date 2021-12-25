@@ -1,5 +1,5 @@
 <template>
-  <button class="add-item group text-gray-600" @click="props.clickNewItem">
+  <button class="add-item h-[150px] group text-gray-600" @click="props.clickNewItem">
     <svg
       class="group-hover:text-blue-500 mb-1 text-gray-400"
       width="20"
@@ -31,7 +31,6 @@ onMounted(() => {
 
 <style>
 .add-item {
-  height: 150px;
   @apply hover:border-blue-500 hover:border-solid hover:bg-white hover:text-blue-500 w-full flex flex-col items-center justify-center rounded-md border-2 border-dashed border-gray-300 text-sm leading-6 text-gray-900 font-medium;
 }
 </style>

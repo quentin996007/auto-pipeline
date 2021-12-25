@@ -1,7 +1,7 @@
 <template>
   <n-drawer v-model:show="active" :placement="'top'" height="51 + 200">
     <n-drawer-content title="处理单元列表">
-      <CodeEditorConfig />
+      <CodeEditorConfig :close-drawer="closeDrawer" />
     </n-drawer-content>
   </n-drawer>
 </template>
@@ -13,6 +13,10 @@ import { onMounted, Ref, ref } from 'vue'
 import CodeEditorConfig from './item/CodeEditorConfig/CodeEditorConfig.vue'
 
 const active = ref(false)
+
+const closeDrawer = () => {
+  active.value = false
+}
 
 defineExpose({
   openDrawer: () => {
@@ -26,4 +30,8 @@ onMounted(() => {
 </script>
 
 <style>
+.CodeMirror {
+  font-family: Arial, monospace;
+  font-size: 16px;
+}
 </style>

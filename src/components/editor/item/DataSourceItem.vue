@@ -1,5 +1,5 @@
 <template>
-  <div class="item p-2 flex flex-col justify-between">
+  <div class="item h-[150px] p-2 flex flex-col justify-between">
     <div class="flex flex-row justify-between items-center">
       <p class="text-gray-900 text-xl">{{ props.sort }}</p>
       <p class="text-gray-900">数据源 - {{ dataTypeName }}</p>
@@ -52,7 +52,6 @@ const changeDataSource = () => {
 
 <style>
 .item {
-  height: 150px;
   @apply bg-white shadow-md rounded-lg border border-gray-200;
 }
 </style>

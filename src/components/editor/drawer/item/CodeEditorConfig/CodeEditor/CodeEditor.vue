@@ -1,12 +1,14 @@
 <template>
-  <Codemirror
-    v-model:value="code"
-    :options="cmOptions"
-    border
-    placeholder="在此处编辑您的代码"
-    @change="onChange"
-  />
-  <div class="flex flex-row justify-between items-center">
+  <div class="h-[500px]">
+    <Codemirror
+      v-model:value="code"
+      :options="cmOptions"
+      border
+      placeholder="在此处编辑您的代码"
+      @change="onChange"
+    />
+  </div>
+  <div class="flex flex-row justify-between items-center h-[50px]">
     <n-dropdown
       trigger="click"
       @select="handleSelectCodeType"
