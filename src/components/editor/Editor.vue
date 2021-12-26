@@ -2,7 +2,11 @@
   <div class="p-4">
     <n-grid cols="2 s:3 m:4 l:5 xl:6 2xl:7" responsive="screen" :x-gap="12" :y-gap="12">
       <n-grid-item>
-        <DataSourceItem :title="'数据源'" :sort="1" :type="dataSource?.type" :url="dataSource?.url" />
+        <DataSourceItem :data-source="store.dataSource" />
+      </n-grid-item>
+
+      <n-grid-item v-for="(item, index) in store.editorList" :key="index">
+        <AddNewEditorItem :click-new-item="clickNewItem" />
       </n-grid-item>
 
       <n-grid-item>
@@ -23,18 +27,13 @@ import EditorItem from './item/EditorItem.vue';
 import DataSourceItem from './item/DataSourceItem.vue';
 import AddNewEditorItem from './item/AddNewEditorItem.vue';
 import EditorDrawer from './drawer/EditorDrawer.vue';
-import { useDataSourceStore } from '../../store/store';
+import { useDefaultStore } from '../../store/store';
 
-const store = useDataSourceStore()
+const store = useDefaultStore()
 
 const drawerRef = ref<typeof EditorDrawer | null>(null)
 
-const dataSource = computed(() => {
-  return store.dataSource;
-})
-
 const clickNewItem = () => {
-  console.log('click new item');
   drawerRef?.value?.openDrawer()
 }
 

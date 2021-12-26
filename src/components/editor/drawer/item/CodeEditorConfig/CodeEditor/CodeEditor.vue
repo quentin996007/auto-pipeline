@@ -54,7 +54,7 @@ const codeTheme = ref("abbott")
 
 const props = defineProps<{
   codeString: string,
-  changeCodeString: (codeString: string) => void,
+  changeCode: (code: string, type: string) => void,
 }>()
 
 const code = ref(props.codeString)
@@ -100,7 +100,7 @@ const handleSelectCodeTheme = (key: string) => {
 }
 
 const onChange = (val: string, cm: any) => {
-  props.changeCodeString(val)
+  props.changeCode(val, codeType.value)
 }
 
 </script>

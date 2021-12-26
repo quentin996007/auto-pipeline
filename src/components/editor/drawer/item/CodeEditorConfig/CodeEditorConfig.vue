@@ -9,7 +9,7 @@
   </div>
   <n-drawer v-model:show="active" :placement="'top'" height="51 + 550">
     <n-drawer-content title="编写代码">
-      <CodeEditor :code-string="codeString" :change-code-string="changeCodeString" />
+      <CodeEditor :code-string="codeString" :change-code="changeCode" />
       <template #footer>
         <NButton class="mr-4" type="error" size="large" @click="active = false">取消</NButton>
         <NButton type="info" size="large" @click="confirmHandle">确定保存</NButton>
@@ -30,8 +30,12 @@ import { NDrawer, NDrawerContent } from 'naive-ui'
 import { DataSourceType } from '../../../../datasource/model/DataSourceType';
 import CodeEditor from './CodeEditor/CodeEditor.vue';
 import CodeTypeList from './CodeEditor/CodeTypeList';
+import { useDefaultStore } from '../../../../../store/store';
+import { EditorItemType } from '../../../model/EditorItemType';
 
 const codeTypeNameList = CodeTypeList.map(item => item.label)
+
+const store = useDefaultStore()
 
 const props = defineProps<{
   closeDrawer: () => void,
@@ -51,9 +55,11 @@ for(let fib of myFib){
 };
 `);
 
-const changeCodeString = (value: string) => {
-  codeString.value = value;
-  console.log(codeString.value)
+const codeType = ref("JavaScript")
+
+const changeCode = (code: string, type: string) => {
+  codeString.value = code;
+  codeType.value = type;
 }
 
 const active = ref(false)
@@ -61,6 +67,12 @@ const active = ref(false)
 const confirmHandle = () => {
   active.value = false
   props.closeDrawer()
+  // 将消息发送到store
+  store.pushEditorItem({
+    type: EditorItemType.CodeEditorType,
+    code: codeString.value,
+    codeType: codeType.value,
+  })
 }
 
 </script>

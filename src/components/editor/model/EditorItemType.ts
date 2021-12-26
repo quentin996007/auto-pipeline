@@ -1,15 +1,12 @@
 export enum EditorItemType {
-  FileDataSource = 'FileDataSource',
-  URLDataSource = 'URLDataSource',
+  CodeEditorType = 'CodeEditorType',
 }
 
 export namespace EditorItemType {
   export function description(type: EditorItemType) {
     switch (type) {
-      case EditorItemType.FileDataSource:
-        return '数据源 - 文件'
-      case EditorItemType.URLDataSource:
-        return '数据源 - URL'
+      case EditorItemType.CodeEditorType:
+        return '编码处理单元'
     }
   }
 }

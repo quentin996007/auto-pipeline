@@ -18,10 +18,10 @@
 import { NUpload, NButton } from 'naive-ui'
 import { FileInfo, OnChange, OnFinish } from 'naive-ui/lib/upload/src/interface'
 import { computed, onMounted, Ref, ref } from 'vue'
-import { useDataSourceStore } from '../../../store/store'
+import { useDefaultStore } from '../../../store/store'
 import { DataSourceType } from '../model/DataSourceType'
 
-const store = useDataSourceStore()
+const store = useDefaultStore()
 
 const uploadRef: Ref<typeof NUpload | null> = ref(null)
 const fileArray = ref<FileInfo[]>([])

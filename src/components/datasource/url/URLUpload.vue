@@ -19,10 +19,10 @@
 
 import { NInput, NButton } from 'naive-ui'
 import { onMounted, ref } from 'vue'
-import { useDataSourceStore } from '../../../store/store'
+import { useDefaultStore } from '../../../store/store'
 import { DataSourceType } from '../model/DataSourceType'
 
-const store = useDataSourceStore()
+const store = useDefaultStore()
 
 const url = ref("http://www.baidu.com/test/file.csv")
 

@@ -1,13 +1,13 @@
 <template>
   <div class="item h-[150px] p-2 flex flex-col justify-between">
     <div class="flex flex-row justify-between items-center">
-      <p class="text-gray-900 text-xl">{{ props.sort }}</p>
+      <p class="text-gray-900 text-xl">1</p>
       <p class="text-gray-900">数据源 - {{ dataTypeName }}</p>
     </div>
     <div class="break-words text-gray-900">
       <span>
         {{ dataTypeName }}:
-        <span class="underline text-green-700">{{ props.url }}</span>
+        <span class="underline text-green-700">{{ props.dataSource.url }}</span>
       </span>
     </div>
     <NPopconfirm @positive-click="changeDataSource">
@@ -23,23 +23,21 @@
 
 import { NButton, NPopconfirm } from 'naive-ui';
 import { computed, onMounted } from 'vue'
-import { useDataSourceStore } from '../../../store/store';
+import { useDefaultStore } from '../../../store/store';
+import { DataSource } from '../../datasource/model/DataSource';
 import { DataSourceType } from '../../datasource/model/DataSourceType';
-const store = useDataSourceStore()
+const store = useDefaultStore()
 
 onMounted(() => {
   console.log('mounted')
 })
 
 const props = defineProps<{
-  sort: number,
-  title: string,
-  url?: string,
-  type?: DataSourceType,
+  dataSource: DataSource | null,
 }>()
 
 const dataTypeName = computed(() => {
-  return DataSourceType.description(props.type)
+  return DataSourceType.description(props.dataSource.type)
 })
 
 const changeDataSource = () => {
