@@ -5,4 +5,5 @@ export interface EditorItem {
   code?: string,
   codeType?: string,
   sort?: number,
+  id?: string,
 }

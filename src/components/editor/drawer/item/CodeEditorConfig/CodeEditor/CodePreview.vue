@@ -1,7 +1,11 @@
 <template>
   <n-drawer v-model:show="active" :placement="'top'" height="51 + 550">
     <n-drawer-content title="编写代码">
-      <CodeEditor :code-string="codeString" :change-code="changeCode" :code-type="props.codeType" />
+      <CodeEditor
+        :code-string="codeString"
+        :change-code="changeCode"
+        :code-type="props.data?.codeType"
+      />
       <template #footer>
         <NButton class="mr-4" type="error" size="large" @click="active = false">取消</NButton>
         <NButton type="info" size="large" @click="confirmHandle">确定保存</NButton>
@@ -21,13 +25,14 @@ import { EditorItemType } from '../../../../model/EditorItemType';
 import { EditorItem } from '../../../../model/EditorItem';
 
 const props = defineProps<{
-  confirmData: (item: EditorItem) => void,
-  code?: string,
+  confirmData: (item: EditorItem, index?: number) => void,
+  // code?: string,
   sort?: number,
-  codeType?: string,
+  // codeType?: string,
+  data?: EditorItem
 }>()
 
-const codeString = ref(props.code ?? `// Write the Code, Change the World
+const codeString = ref(props.data?.code ?? `// Write the Code, Change the World
 function* fib2(num){
     let [pre, current] = [0, 1];
     for(let i=0;i<num;i++){
@@ -40,7 +45,7 @@ for(let fib of myFib){
     console.log(fib);
 };
 `);
-const codeType = ref(props.codeType ?? "JavaScript")
+const codeType = ref(props.data?.codeType ?? "JavaScript")
 
 const changeCode = (code: string, type: string) => {
   codeString.value = code;
@@ -58,11 +63,11 @@ const active = ref(false)
 const confirmHandle = () => {
   active.value = false
   props.confirmData({
+    ...props.data,
     type: EditorItemType.CodeEditorType,
     code: codeString.value,
     codeType: codeType.value,
-    sort: props.sort,
-  })
+  }, props.sort)
 }
 
 </script>

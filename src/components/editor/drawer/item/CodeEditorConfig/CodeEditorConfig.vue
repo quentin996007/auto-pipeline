@@ -7,7 +7,7 @@
     </div>
     <n-button @click="codePreviewRef?.openDrawer()">选择模块</n-button>
   </div>
-  <CodePreview ref="codePreviewRef" :sort="store.editorList.length" :confirm-data="confirmData" />
+  <CodePreview ref="codePreviewRef" :confirm-data="confirmData" />
 </template>
 
 <script setup lang="ts">
@@ -29,9 +29,11 @@ const props = defineProps<{
   closeDrawer: () => void,
 }>()
 
-const confirmData = (item: EditorItem) => {
+const confirmData = (item: EditorItem, index: number) => {
   props.closeDrawer()
   // 将消息发送到store
+  item.id = Math.random().toString(36).slice(-8)
+  item.sort = store.editorList.length
   store.pushEditorItem(item)
 }
 

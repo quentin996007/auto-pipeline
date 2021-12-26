@@ -5,7 +5,7 @@
         <DataSourceItem :data-source="store.dataSource" />
       </n-grid-item>
 
-      <n-grid-item v-for="(item, index) in store.editorList" :key="index">
+      <n-grid-item v-for="(item, index) in store.editorList" :key="item.id">
         <component :is="renderComponentWithType(item.type)" :sort="index" :data="item"></component>
       </n-grid-item>
 
