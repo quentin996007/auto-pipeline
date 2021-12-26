@@ -27,8 +27,20 @@ const props = defineProps<{
   codeType?: string,
 }>()
 
-const codeString = ref(props.code);
-const codeType = ref(props.codeType)
+const codeString = ref(props.code ?? `// Write the Code, Change the World
+function* fib2(num){
+    let [pre, current] = [0, 1];
+    for(let i=0;i<num;i++){
+        yield current;
+        [pre, current] = [current, pre+current];
+    }
+}
+let myFib = fib2(10);
+for(let fib of myFib){
+    console.log(fib);
+};
+`);
+const codeType = ref(props.codeType ?? "JavaScript")
 
 const changeCode = (code: string, type: string) => {
   codeString.value = code;
