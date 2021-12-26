@@ -6,7 +6,7 @@
       </n-grid-item>
 
       <n-grid-item v-for="(item, index) in store.editorList" :key="index">
-        <AddNewEditorItem :click-new-item="clickNewItem" />
+        <component :is="renderComponentWithType(item.type)" :sort="index" :data="item"></component>
       </n-grid-item>
 
       <n-grid-item>
@@ -23,11 +23,12 @@ import { NGrid, NGridItem } from 'naive-ui';
 import { computed, onMounted, ref, Ref } from 'vue'
 
 import { DataSourceType } from '../datasource/model/DataSourceType';
-import EditorItem from './item/EditorItem.vue';
+import CodeEditorItem from './item/CodeEditorItem.vue';
 import DataSourceItem from './item/DataSourceItem.vue';
 import AddNewEditorItem from './item/AddNewEditorItem.vue';
 import EditorDrawer from './drawer/EditorDrawer.vue';
 import { useDefaultStore } from '../../store/store';
+import { EditorItemType } from './model/EditorItemType';
 
 const store = useDefaultStore()
 
@@ -35,6 +36,15 @@ const drawerRef = ref<typeof EditorDrawer | null>(null)
 
 const clickNewItem = () => {
   drawerRef?.value?.openDrawer()
+}
+
+const renderComponentWithType = (type: EditorItemType) => {
+  switch (type) {
+    case EditorItemType.CodeEditorType:
+      return CodeEditorItem
+    default:
+      return CodeEditorItem
+  }
 }
 
 </script>

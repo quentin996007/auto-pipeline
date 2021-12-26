@@ -49,13 +49,14 @@ import "codemirror/theme/idea.css";
 import CodeTypeList from './CodeTypeList';
 import CodeThemeList from './CodeThemeList';
 
-const codeType = ref("JavaScript")
-const codeTheme = ref("abbott")
-
 const props = defineProps<{
-  codeString: string,
+  codeString?: string,
+  codeType?: string,
   changeCode: (code: string, type: string) => void,
 }>()
+
+const codeType = ref(props.codeType ?? "JavaScript")
+const codeTheme = ref("abbott")
 
 const code = ref(props.codeString)
 
@@ -92,6 +93,7 @@ const cmOptions = reactive({
 const handleSelectCodeType = (key: string) => {
   codeType.value = key
   cmOptions.mode = currentLanguageType.value
+  props.changeCode(code.value, codeType.value)
 }
 
 const handleSelectCodeTheme = (key: string) => {
@@ -100,7 +102,8 @@ const handleSelectCodeTheme = (key: string) => {
 }
 
 const onChange = (val: string, cm: any) => {
-  props.changeCode(val, codeType.value)
+  code.value = val
+  props.changeCode(code.value, codeType.value)
 }
 
 </script>

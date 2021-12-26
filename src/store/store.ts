@@ -27,6 +27,10 @@ export const useDefaultStore = defineStore('dataSource', {
     removeEditorItem(index: number) {
       this.editorList.splice(index, 1)
     },
+    updateEditorItem(index: number, editorItem: EditorItem) {
+      console.log('updateEditorItem', index, editorItem);
+      this.editorList.splice(index, 1, editorItem)
+    },
     changeEditorItemIndex(index: number, newIndex: number) {
       const item = this.editorList[index]
       this.editorList.splice(index, 1)
