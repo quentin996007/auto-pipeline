@@ -8,8 +8,9 @@
         class="text-gray-900"
       >{{ `${EditorItemType.description(props.data.type)} - ${props.data.codeType}` }}</p>
     </div>
-    <div>
+    <div class="flex flex-row justify-between items-center">
       <n-button @click="previewCode">预览代码</n-button>
+      <n-button type="error" @click="removeEditorItem">移除单元</n-button>
     </div>
   </div>
   <CodePreview
@@ -53,6 +54,10 @@ const handleSelectUpdateIndex = (index: number) => {
 
 const previewCode = () => {
   codePreviewRef?.value?.openDrawer()
+}
+
+const removeEditorItem = () => {
+  store.removeEditorItem(props.sort)
 }
 
 const confirmData = (item: EditorItem, index?: number) => {
