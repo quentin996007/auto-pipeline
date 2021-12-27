@@ -29,6 +29,7 @@ import AddNewEditorItem from './item/AddNewEditorItem.vue';
 import EditorDrawer from './drawer/EditorDrawer.vue';
 import { useDefaultStore } from '../../store/store';
 import { EditorItemType } from './model/EditorItemType';
+import DataAnalysis from './item/DataAnalysis.vue';
 
 const store = useDefaultStore()
 
@@ -42,6 +43,9 @@ const renderComponentWithType = (type: EditorItemType) => {
   switch (type) {
     case EditorItemType.CodeEditorType:
       return CodeEditorItem
+    case EditorItemType.DataAnalysisType:
+      return DataAnalysis
+
     default:
       return CodeEditorItem
   }

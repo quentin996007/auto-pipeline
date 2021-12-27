@@ -1,5 +1,5 @@
 <template>
-  <div class="item h-[200px] w-[300px] p-2 flex flex-col justify-between">
+  <div class="item h-[200px] w-[300px] p-2 flex flex-shrink-0 flex-col justify-between">
     <div class="text-green-900 text-lg font-bold">自定义编码处理</div>
     <div>
       可选语言:

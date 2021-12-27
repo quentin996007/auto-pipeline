@@ -47,10 +47,7 @@ const dataFlow = computed(() => {
     },
     ...flowDataList
   ]
-  const finalFlowDataListStr = JSON.stringify(finalFlowDataList, null, 2)
-  console.log(finalFlowDataListStr);
-
-  return finalFlowDataListStr
+  return JSON.stringify(finalFlowDataList, null, 2)
 })
 
 </script>
