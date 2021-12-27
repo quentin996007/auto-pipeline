@@ -4,6 +4,7 @@ import App from './App.vue'
 import naive from 'naive-ui'
 import './index.css'
 import { createPinia } from 'pinia'
+// @ts-ignore
 import Codemirror from "codemirror-editor-vue3";
 
 // 通用字体

@@ -19,7 +19,6 @@ import DataSource from '@/components/datasource/DataSource.vue'
 import Editor from './components/editor/Editor.vue';
 import Title from './components/title/Title.vue';
 import { useDefaultStore } from './store/store';
-import CodeTypeList from './components/editor/drawer/item/CodeEditorConfig/CodeTypeList';
 
 const store = useDefaultStore()
 

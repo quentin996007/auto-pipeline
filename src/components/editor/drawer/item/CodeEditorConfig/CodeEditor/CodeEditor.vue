@@ -31,6 +31,7 @@
 <script setup lang="ts">
 
 import { NButton, NModal, NDropdown, NCard } from 'naive-ui';
+// @ts-ignore
 import Codemirror from "codemirror-editor-vue3";
 
 import { computed, onMounted, reactive, ref, toRef } from 'vue'
@@ -93,7 +94,7 @@ const cmOptions = reactive({
 const handleSelectCodeType = (key: string) => {
   codeType.value = key
   cmOptions.mode = currentLanguageType.value
-  props.changeCode(code.value, codeType.value)
+  props.changeCode(code?.value ?? "", codeType.value)
 }
 
 const handleSelectCodeTheme = (key: string) => {

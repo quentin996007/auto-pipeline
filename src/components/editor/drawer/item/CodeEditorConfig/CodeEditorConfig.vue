@@ -42,7 +42,7 @@ const props = defineProps<{
   closeDrawer: () => void,
 }>()
 
-const confirmData = (item: EditorItem, index: number) => {
+const confirmData = (item: EditorItem, index?: number) => {
   props.closeDrawer()
   // 将消息发送到store
   item.id = Math.random().toString(36).slice(-8)

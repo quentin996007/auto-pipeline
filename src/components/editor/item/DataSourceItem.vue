@@ -7,7 +7,7 @@
     <div class="break-words text-gray-900">
       <span>
         {{ dataTypeName }}:
-        <span class="underline text-green-700">{{ props.dataSource.url }}</span>
+        <span class="underline text-green-700">{{ props.dataSource?.url }}</span>
       </span>
     </div>
     <NPopconfirm @positive-click="changeDataSource">
@@ -37,7 +37,7 @@ const props = defineProps<{
 }>()
 
 const dataTypeName = computed(() => {
-  return DataSourceType.description(props.dataSource.type)
+  return DataSourceType.description(props.dataSource?.type)
 })
 
 const changeDataSource = () => {
