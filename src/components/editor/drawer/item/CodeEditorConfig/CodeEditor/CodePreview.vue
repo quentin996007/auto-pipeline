@@ -1,6 +1,14 @@
 <template>
   <n-drawer v-model:show="active" :placement="'top'" height="51 + 550">
-    <n-drawer-content title="编写代码">
+    <n-drawer-content>
+      <template #header>
+        <div class="flex flex-row justify-between items-center">
+          <n-icon size="30" color="#0e7a0d">
+            <Writing />
+          </n-icon>
+          <p>编写代码</p>
+        </div>
+      </template>
       <CodeEditor
         :code-string="codeString"
         :change-code="changeCode"
@@ -8,7 +16,14 @@
       />
       <template #footer>
         <NButton class="mr-4" type="error" size="large" @click="active = false">取消</NButton>
-        <NButton type="info" size="large" @click="confirmHandle">确定保存</NButton>
+        <NButton type="info" size="large" @click="confirmHandle">
+          <template #icon>
+            <n-icon>
+              <SaveAltRound />
+            </n-icon>
+          </template>
+          确定保存
+        </NButton>
       </template>
     </n-drawer-content>
   </n-drawer>
@@ -23,6 +38,10 @@ import { NDrawer, NDrawerContent } from 'naive-ui'
 import CodeEditor from './CodeEditor.vue';
 import { EditorItemType } from '../../../../model/EditorItemType';
 import { EditorItem } from '../../../../model/EditorItem';
+
+import { Writing } from '@vicons/tabler'
+import { SaveAltRound } from '@vicons/material'
+
 
 const props = defineProps<{
   confirmData: (item: EditorItem, index?: number) => void,

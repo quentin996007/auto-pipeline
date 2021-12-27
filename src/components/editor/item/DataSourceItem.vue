@@ -12,7 +12,7 @@
     </div>
     <NPopconfirm @positive-click="changeDataSource">
       <template #trigger>
-        <n-button>变更数据源</n-button>
+        <n-button color="#8a2be2">变更数据源</n-button>
       </template>
       您是否要变更数据源？
     </NPopconfirm>

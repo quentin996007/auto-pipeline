@@ -1,7 +1,7 @@
 <template>
   <n-config-provider :locale="zhCN" :date-locale="dateZhCN">
     <div class="q-container">
-      <Title />
+      <Title :show-data-flow-btn="dataSource != null" />
       <div style="flex:1">
         <DataSource v-if="!dataSource"></DataSource>
         <Editor v-if="dataSource"></Editor>

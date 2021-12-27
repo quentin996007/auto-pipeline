@@ -536,6 +536,41 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vueuse/core@npm:^7.4.1":
+  version: 7.4.1
+  resolution: "@vueuse/core@npm:7.4.1"
+  dependencies:
+    "@vueuse/shared": 7.4.1
+    vue-demi: "*"
+  peerDependencies:
+    "@vue/composition-api": ^1.1.0
+    vue: ^2.6.0 || ^3.2.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+    vue:
+      optional: true
+  checksum: f63dcfbb13030f329157856866a7be6a8fb896a3220a7ac49c02ff7f31c84ddb1bc1844db920326b784b97976c3de64ad96c66b403bb3d7a9c51d3370a0dc895
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:7.4.1":
+  version: 7.4.1
+  resolution: "@vueuse/shared@npm:7.4.1"
+  dependencies:
+    vue-demi: "*"
+  peerDependencies:
+    "@vue/composition-api": ^1.1.0
+    vue: ^2.6.0 || ^3.2.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+    vue:
+      optional: true
+  checksum: ddcd692fa747d6d5cfe4c52da3a9636c9cc52c307e1a4ce6bc2ace464677a0536dda7ba67d5f64156e58a5719ef04fd871993f2c7ae7552f2edc70092989224b
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:1":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -701,6 +736,7 @@ __metadata:
     "@vicons/material": ^0.11.0
     "@vicons/tabler": ^0.11.0
     "@vitejs/plugin-vue": ^2.0.0
+    "@vueuse/core": ^7.4.1
     autoprefixer: ^10.4.0
     codemirror: ^5.65.0
     codemirror-editor-vue3: ^0.3.5

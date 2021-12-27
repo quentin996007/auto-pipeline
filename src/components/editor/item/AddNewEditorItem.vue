@@ -23,10 +23,6 @@ const props = defineProps<{
   clickNewItem: () => void,
 }>()
 
-onMounted(() => {
-  console.log('mounted')
-})
-
 </script>
 
 <style>

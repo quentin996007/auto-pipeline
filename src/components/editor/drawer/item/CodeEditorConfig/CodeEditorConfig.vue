@@ -5,7 +5,7 @@
       可选语言:
       <div v-for="name in codeTypeNameList" :key="name">{{ name }}</div>
     </div>
-    <n-button @click="codePreviewRef?.openDrawer()">选择模块</n-button>
+    <n-button type="success" @click="codePreviewRef?.openDrawer()">选择模块</n-button>
   </div>
   <CodePreview ref="codePreviewRef" :confirm-data="confirmData" />
 </template>
