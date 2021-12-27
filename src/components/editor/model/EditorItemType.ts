@@ -1,6 +1,7 @@
 export enum EditorItemType {
   CodeEditorType = 'CodeEditorType',
   DataAnalysisType = 'DataAnalysisType',
+  DataPreprocessingType = 'DataPreprocessingType',
 }
 
 export namespace EditorItemType {
@@ -10,6 +11,8 @@ export namespace EditorItemType {
         return '编码'
       case EditorItemType.DataAnalysisType:
         return '数据分析'
+      case EditorItemType.DataPreprocessingType:
+        return '数据预处理'
     }
   }
 }

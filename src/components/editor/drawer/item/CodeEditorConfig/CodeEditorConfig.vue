@@ -5,7 +5,19 @@
       可选语言:
       <div v-for="name in codeTypeNameList" :key="name">{{ name }}</div>
     </div>
-    <n-button type="success" @click="codePreviewRef?.openDrawer()">选择模块</n-button>
+    <div class="flex flex-row items-center space-x-2">
+      <n-button class="flex-1" type="success" @click="codePreviewRef?.openDrawer()">选择模块</n-button>
+      <n-popover :style="{ maxWidth: '300px' }" placement="bottom" trigger="click">
+        <template #trigger>
+          <n-button strong secondary circle type="warning">
+            <n-icon>
+              <Question />
+            </n-icon>
+          </n-button>
+        </template>
+        <span class="text-gray-900 font-normal">你可以编写自定义处理数据的代码，当您需要清晰地在某个环节插入自定义处理流程，这将会十分有效。</span>
+      </n-popover>
+    </div>
   </div>
   <CodePreview ref="codePreviewRef" :confirm-data="confirmData" />
 </template>
@@ -19,6 +31,7 @@ import CodeTypeList from './CodeEditor/CodeTypeList';
 import { useDefaultStore } from '../../../../../store/store';
 import CodePreview from './CodeEditor/CodePreview.vue';
 import { EditorItem } from '../../../model/EditorItem';
+import { Question } from '@vicons/fa'
 
 const codeTypeNameList = CodeTypeList.map(item => item.label)
 const codePreviewRef = ref<typeof CodePreview | null>(null)

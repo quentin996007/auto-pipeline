@@ -1,6 +1,6 @@
 <template>
   <div class="item h-[200px] w-[300px] p-2 flex flex-shrink-0 flex-col justify-between">
-    <div class="text-green-900 text-lg font-bold">数据分析</div>
+    <div class="text-green-900 text-lg font-bold">数据预处理</div>
     <div>Demo 模型待定</div>
     <div class="flex flex-row items-center space-x-2">
       <n-button class="flex-1" type="success" @click="confirmData">选择模块</n-button>
@@ -13,8 +13,9 @@
           </n-button>
         </template>
         <span class="text-gray-900 font-normal">
-          大数据分析技术主要包括已有数据的分布式统计分析技术和未知数据的分布式挖掘、深度学习技术。分布式统计分析可由数据处理技术完成，分布式挖掘和深度学习技术则在大数据分析阶段完成，包括聚类与分类、关联分析、深度学习等，可挖掘大数据集合中的数据关联性，形成对事物的描述模式或属性规则，可通过构建机器学习模型和海量训练数据提升数据分析与预测的准确性。
-          数据分析是大数据处理与应用的关键环节，它决定了大数据集合的价值性和可用性，以及分析预测结果的准确性。在数据分析环节，应根据大数据应用情境与决策需求，选择合适的数据分析技术，提高大数据分析结果的可用性、价值性和准确性质量。
+          大数据采集过程中通常有一个或多个数据源，这些数据源包括同构或异构的数据库、文件系统、服务接口等，易受到噪声数据、数据值缺失、数据冲突等影响，因此需首先对收集到的大数据集合进行预处理，以保证大数据分析与预测结果的准确性与价值性。
+          大数据的预处理环节主要包括数据清理、数据集成、数据归约与数据转换等内容，可以大大提高大数据的总体质量，是大数据过程质量的体现。 数据清理技术包括对数据的不一致检测、噪声数据的识别、数据过滤与修正等方面，有利于提高大数据的一致性、准确性、真实性和可用性等方面的质量;
+          数据集成则是将多个数据源的数据进行集成，从而形成集中、统一的数据库、数据立方体等，这一过程有利于提高大数据的完整性、一致性、安全性和可用性等方面质量。
         </span>
       </n-popover>
     </div>
@@ -23,7 +24,7 @@
 
 <script setup lang="ts">
 
-import { NButton, NModal, NDropdown, NCard, NPopover } from 'naive-ui';
+import { NButton, NModal, NDropdown, NCard } from 'naive-ui';
 
 import { ref } from 'vue'
 import { useDefaultStore } from '../../../../../store/store';

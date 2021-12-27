@@ -4,6 +4,7 @@
       <div class="flex flex-row flex-nowrap items-center overflow-x-auto space-x-4">
         <CodeEditorConfig :close-drawer="closeDrawer" />
         <DataAnalysisConfig :close-drawer="closeDrawer" />
+        <DataPreprocessing :close-drawer="closeDrawer" />
       </div>
     </n-drawer-content>
   </n-drawer>
@@ -15,6 +16,8 @@ import { NDrawer, NDrawerContent } from 'naive-ui'
 import { onMounted, Ref, ref } from 'vue'
 import CodeEditorConfig from './item/CodeEditorConfig/CodeEditorConfig.vue'
 import DataAnalysisConfig from './item/DataAnalysisConfig/DataAnalysisConfig.vue'
+import DataPreprocessing from './item/DataPreprocessing/DataPreprocessing.vue'
+
 
 
 const active = ref(false)
