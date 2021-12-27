@@ -11,7 +11,7 @@
     <NButton type="info" v-if="props.showDataFlowBtn" @click="showModal = true">展示数据流结构</NButton>
   </div>
   <n-modal v-model:show="showModal">
-    <n-card style="width: 600px; height: 600px;" title="当前数据流结构" :bordered="true" size="huge">
+    <n-card style="width: 350px; height: 600px;" title="当前数据流结构" :bordered="true" size="huge">
       <div class="overflow-y-scroll h-[500px]">
         <p class="whitespace-pre overflow-hidden overflow-ellipsis">{{ dataFlow }}</p>
       </div>

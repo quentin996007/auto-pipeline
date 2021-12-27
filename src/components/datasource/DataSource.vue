@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col w-full h-full justify-center items-center">
-    <div class="w-96 h-72 border-gray-50 border-2 bg-white rounded-xl shadow-xl">
+    <div class="w-[350px] h-72 border-gray-50 border-2 bg-white rounded-xl shadow-xl">
       <p class="text-base font-bold text-gray-700 text-center p-4">设置数据源</p>
       <n-tabs default-value="url" size="large" justify-content="space-evenly">
         >

@@ -1,5 +1,5 @@
 <template>
-  <n-config-provider :locale="zhCN" :date-locale="dateZhCN">
+  <n-config-provider class="h-full" :locale="zhCN" :date-locale="dateZhCN">
     <div class="q-container">
       <Title :show-data-flow-btn="dataSource != null" />
       <div style="flex:1">
@@ -30,6 +30,11 @@ const dataSource = computed(() => {
 
 <style>
 .q-container {
-  @apply flex h-screen w-full flex-col;
+  @apply flex h-full w-full flex-col;
+}
+html,
+body,
+#app {
+  height: 100%;
 }
 </style>
